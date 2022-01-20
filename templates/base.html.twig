@@ -6,14 +6,34 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            <!-- Google Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+            <!-- Bootstrap Core Css -->
+            <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+            <!-- Waves Effect Css -->
+            <link href="{{ asset('assets/plugins/node-waves/waves.css') }}" rel="stylesheet" />
+            <!-- Animation Css -->
+            <link href="{{ asset('assets/plugins/animate-css/animate.css') }}" rel="stylesheet" />
+            <!-- Custom Css -->
+            <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            <!-- Jquery Core Js -->
+            <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+            <!-- Bootstrap Core Js -->
+            <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.js') }}"></script>
+            <!-- Waves Effect Plugin Js -->
+            <script src="{{ asset('assets/plugins/node-waves/waves.js') }}"></script>
+            <!-- Validation Plugin Js -->
+            <script src="{{ asset('assets/plugins/jquery-validation/jquery.validate.js') }}"></script>
+            <!-- Custom Js -->
+            <script src="{{ asset('assets/js/admin.js') }}"></script>
+            <script src="{{ asset('assets/js/pages/examples/sign-in.js') }}"></script>
         {% endblock %}
     </head>
-    <body>
+    <body class="login-page">
         {% block body %}{% endblock %}
     </body>
 </html>

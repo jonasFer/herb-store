@@ -6,8 +6,10 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "admin"
       MYSQL_DATABASE: "db_store"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "admin"
     ports:
-      - "3307:3307"
+      - "3306:3306"
     networks:
       - mysql-compose-network
 

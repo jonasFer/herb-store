@@ -2,7 +2,7 @@
 
 namespace App\Domain\Model;
 
-use App\Repository\UsuarioRepository;
+use App\Infrastructure\Doctrine\Repository\UsuarioRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
