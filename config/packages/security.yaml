@@ -11,7 +11,7 @@ security:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
-                class: App\Entity\Domain\Model\Usuario
+                class: App\Domain\Model\Usuario
                 property: email
     firewalls:
         dev:
@@ -20,6 +20,11 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+            form_login:
+                # "login" is the name of the route created previously
+                login_path: login
+                check_path: login
+                enable_csrf: true
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -30,8 +35,8 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/login, roles: PUBLIC_ACCESS } # Define que a rota /login é de acesso publico
+        - { path: ^/, roles: ROLE_USER } # Define que as demais rotas são podem ser acessadas por que tiver ROLE_USER(Usuario logado)
 
 when@test:
     security:

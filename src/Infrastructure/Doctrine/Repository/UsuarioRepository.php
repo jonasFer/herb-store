@@ -2,13 +2,17 @@
 
 namespace App\Infrastructure\Doctrine\Repository;
 
-use App\Entity\Usuario;
+use App\Domain\Model\Usuario;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
+/**
+ * Class UsuarioRepository
+ * @package App\Infrastructure\Doctrine\Repository
+ */
 class UsuarioRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
     public function __construct(ManagerRegistry $registry)
