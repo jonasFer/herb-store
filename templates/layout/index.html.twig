@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block layout %}
+    {% include 'layout/loading.html.twig' %}
+    {% include 'layout/header/index.html.twig' %}
+    {% include 'layout/menu/index.html.twig' %}
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
